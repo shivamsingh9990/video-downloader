@@ -2,9 +2,11 @@ import Link from "next/link";
 
 export default function Login() {
   return (
-    <div className="flex gap-3">
+    <div className="flex">
       <Link href="/login">
-        <button className=" w-20 h-7 rounded-xl text-md  bg-black text-white border">Login</button>
+        <button className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
+          Login
+        </button>
       </Link>
     </div>
   );
