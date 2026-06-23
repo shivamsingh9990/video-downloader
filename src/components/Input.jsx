@@ -1,7 +1,7 @@
 export default function Input({ search, setSearch }) {
   return (
     <input
-      className="w-lg border-2 p-4 border-amber-600 h-12 rounded-md bg-white text-black"
+      className="w-full rounded-3xl border border-slate-300 bg-slate-50 px-4 py-4 text-slate-900 outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-300/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
       type="text"
       placeholder="Search platforms..."
       value={search}

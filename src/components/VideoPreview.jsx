@@ -1,15 +1,15 @@
 export default function VideoPreview() {
   return (
-    <div className="max-w-3xl mx-auto mt-10 border rounded p-4">
+    <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-lg shadow-slate-900/5 dark:border-slate-700 dark:bg-slate-900">
       <img
         src="https://placehold.co/600x300"
         alt="thumbnail"
-        className="rounded"
+        className="w-full rounded-3xl object-cover"
       />
 
-      <h2 className="text-xl font-bold mt-4">Sample Video Title</h2>
+      <h2 className="mt-5 text-xl font-semibold text-slate-900 dark:text-white">Sample Video Title</h2>
 
-      <p className="text-gray-500">Duration: 10:20</p>
+      <p className="mt-2 text-slate-500 dark:text-slate-400">Duration: 10:20</p>
     </div>
   );
 }

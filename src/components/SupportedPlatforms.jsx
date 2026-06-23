@@ -18,70 +18,78 @@ export default function SupportedPlatforms() {
   const visibleCards = filteredPlatforms.slice(0, 14);
   const remainingCount = filteredPlatforms.length - visibleCards.length;
   return (
-    <section id="platforms" className="py-24 px-6">
+    <section id="platforms" className="py-24 px-6 dark:bg-slate-950">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4">Supported Platforms</h2>
+        <h2 className="text-4xl font-bold  mb-4  dark:text-white">
+          Supported Platforms
+        </h2>
 
-        <p className="text-center text-gray-500 mb-16">
+        <p className=" font-bold text-slate-400 mb-16">
           Download videos from your favorite platforms.
         </p>
         <div className="mb-5">
           <Input search={search} setSearch={setSearch} />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
           {visibleCards.length === 0 ? (
-            <div className="col-span-full text-center text-gray-500">
-              No platforms match "{search}"
+            <div className="col-span-full text-center text-slate-500 dark:text-slate-400">
+              No platforms match &quot;{search}&quot;
             </div>
           ) : (
             visibleCards.map((platform) => (
               <div
                 key={platform.id}
-                className={`${platform.cardClass} rounded-2xl p-8 shadow-lg hover:-translate-y-2 transition duration-300 flex flex-col items-center`}
+                className={`${platform.cardClass} rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 flex flex-col items-center`}
               >
                 <div className={`text-5xl mb-4 ${platform.iconClass}`}>
                   {platform.icon}
                 </div>
 
-                <h3 className="font-semibold text-lg">{platform.name}</h3>
+                <h3 className="font-semibold text-lg text-slate-900 dark:text-slate-100">
+                  {platform.name}
+                </h3>
               </div>
             ))
           )}
           {remainingCount > 0 && (
             <div
               onClick={() => setShowModal(true)}
-              className="p-4 border rounded-lg bg-gray-100 flex items-center justify-center cursor-pointer font-bold"
+              className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-center font-semibold text-slate-900 transition hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-cyan-500 dark:hover:bg-slate-800"
             >
               +{remainingCount} More
             </div>
           )}
         </div>
         {showModal && (
-          <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div className="bg-white w-[90%] max-w-5xl p-6 rounded-lg">
-              <div className="flex justify-between mb-4 ">
-                <h2 className="text-2xl font-bold">
+          <div className="fixed inset-0 bg-slate-950/80 flex justify-center items-center px-4 py-8">
+            <div className="w-full max-w-5xl overflow-hidden rounded-4xl border border-slate-700 bg-slate-950 shadow-2xl">
+              <div className="flex flex-col gap-4 border-b border-slate-800 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+                <h2 className="text-2xl font-bold text-white">
                   Platforms ({filteredPlatforms.length})
                 </h2>
 
                 <button
                   onClick={() => setShowModal(false)}
-                  className="px-3 py-1 bg-red-500 text-white rounded"
+                  className="rounded-3xl bg-rose-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-400"
                 >
                   Close
                 </button>
               </div>
 
-              <div className="grid grid-cols-4 gap-4 max-h-[70vh] overflow-y-auto">
+              <div className="grid grid-cols-2 gap-4 p-6 sm:grid-cols-4">
                 {filteredPlatforms.map((platform) => (
                   <div
                     key={platform.id}
-                    className={`${platform.cardClass} rounded-2xl p-8 shadow-lg hover:-translate-y-2 transition duration-300 flex flex-col items-center`}
+                    className={`${platform.cardClass} rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col items-center justify-center`}
                   >
                     <div className={`text-5xl mb-4 ${platform.iconClass}`}>
                       {platform.icon}
                     </div>
+
+                    <h3 className="text-center text-sm font-semibold text-slate-100">
+                      {platform.name}
+                    </h3>
                   </div>
                 ))}
               </div>

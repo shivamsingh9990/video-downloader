@@ -16,7 +16,8 @@ export default function Features() {
     },
     {
       title: "Audio Download",
-      description: "Extract audio tracks effortlessly in your preferred format.",
+      description:
+        "Extract audio tracks effortlessly in your preferred format.",
       icon: <FaMusic />,
       accent: "from-emerald-500 to-lime-400",
     },
@@ -29,22 +30,41 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-20 px-6">
-      <h2 className="text-4xl font-bold text-center mb-10">Features</h2>
+    <section id="features" className="py-24 px-6  dark:bg-slate-950">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.32em] text-slate-500 dark:text-white">
+            What makes us better
+          </p>
+          <h2 className="mt-4 text-4xl font-bold  dark:text-white">
+            Modern features for fast downloads
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl  dark:text-white">
+            Everything you need in one interface: speed, quality controls, smart
+            previews, and mobile-ready downloads.
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-          >
-            <div className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.accent} text-white shadow-lg`}>
-              <span className="text-2xl">{feature.icon}</span>
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="group rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5 transition duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900"
+            >
+              <div
+                className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br ${feature.accent} text-white shadow-xl transition-transform duration-300 group-hover:scale-105`}
+              >
+                <span className="text-2xl">{feature.icon}</span>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                {feature.title}
+              </h3>
+              <p className="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-            <p className="text-gray-600">{feature.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -31,20 +31,28 @@ export default function Faq() {
           </p>
           <h2 className="text-4xl font-bold">Need help? We have answers.</h2>
           <p className="mt-4 text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Learn more about how our video downloader works, the platforms we support, and the safety of your downloads.
+            Learn more about how our video downloader works, the platforms we
+            support, and the safety of your downloads.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
           {faqs.map((faq) => (
-            <div key={faq.question} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div
+              key={faq.question}
+              className="group overflow-hidden rounded-3xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
               <div className="flex items-center justify-between gap-4">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{faq.question}</h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  {faq.question}
+                </h3>
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 transition duration-300 group-hover:bg-sky-500 group-hover:text-white">
                   ?
                 </span>
               </div>
-              <p className="mt-4 text-gray-600 dark:text-slate-300">{faq.answer}</p>
+              <p className="mt-4 text-gray-600 dark:text-slate-300">
+                {faq.answer}
+              </p>
             </div>
           ))}
         </div>
